@@ -48,6 +48,10 @@
         <td><%= status.status %></td>
         <td><%= status.user %></td>
         <td><%= status.number_of_likes %></td>
+        <td>
+          <%= link_to 'Edit', edit_status_update_path(status) %>
+          <%= link_to 'Delete', status, method: :delete, data: { confirm: 'Are you sure?' }%>
+        </td>
       </tr>
     <% end %>
   </tbody>

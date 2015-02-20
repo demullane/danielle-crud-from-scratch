@@ -30,6 +30,8 @@ class StatusUpdatesController < ApplicationController
   end
 
   def destroy
+    @status_update.destroy
+      redirect_to root_path, notice: 'Status update was successfully deleted.'
   end
 
 private
