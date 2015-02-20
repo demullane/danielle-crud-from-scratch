@@ -1,0 +1,30 @@
+<%= form_for @status_update do |f| %>
+
+<% if @status_update.errors.any? %>
+  <div>
+    <h4><%= pluralize(@status_update.errors.count, "error") %> prohibited this task from being saved:</h4>
+    <ul>
+      <% @status_update.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div>
+    <%= f.label :status %>
+    <%= f.text_area :status %>
+  </div>
+  <div>
+    <%= f.label :user, "User Name" %>
+    <%= f.text_field :user %>
+  </div>
+  <div>
+    <%= f.label :number_of_likes %>
+    <%= f.number_field :number_of_likes %>
+  </div>
+  <div>
+    <%= f.submit %>
+    <%= link_to "Cancel", root_path %>
+  </div>
+<% end %>

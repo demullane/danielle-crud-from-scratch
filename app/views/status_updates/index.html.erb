@@ -1,37 +1,6 @@
 <p>STATUS UPDATES</p>
 
-<%= form_for @status_update do |f| %>
-
-  <% if @status_update.errors.any? %>
-    <div>
-      <h3><%= pluralize(@status_update.errors.count, "error") %> prohibited this status update from being saved:</h3>
-      <ul>
-        <% @status_update.errors.full_message.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= f.label :status %>
-    <%= f.text_area :status %>
-  </div>
-  <div>
-    <%= f.label :user, "User Name" %>
-    <%= f.text_field :user %>
-  </div>
-  <div>
-    <%= f.label :number_of_likes %>
-    <%= f.number_field :number_of_likes %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<p></p>
-<p></p>
+<%= link_to "New Status Update", new_status_update_path %>
 
 <table>
   <thead>

@@ -3,6 +3,9 @@ class StatusUpdatesController < ApplicationController
 
   def index
     @status_updates = StatusUpdate.all
+  end
+
+  def new
     @status_update = StatusUpdate.new
   end
 
@@ -11,7 +14,7 @@ class StatusUpdatesController < ApplicationController
     if @status_update.save
       redirect_to @status_update, notice: 'Status update was successfully submitted.'
     else
-      redirect_to :new
+      render :new
     end
   end
 
