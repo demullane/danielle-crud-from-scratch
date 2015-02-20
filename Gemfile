@@ -58,6 +58,7 @@ group :development, :test do
   # Testing gems
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'launchy'
   gem 'spring-commands-rspec'
 
   end
