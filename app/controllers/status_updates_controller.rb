@@ -1,8 +1,8 @@
 class StatusUpdatesController < ApplicationController
-  before_action :set_status_update, only: [:show, :edit, :update, :destroy]
+  before_action :set_status_update, only: [:show, :edit, :update, :destroy, :like]
 
   def index
-    @status_updates = StatusUpdate.all
+    @status_updates = StatusUpdate.all.order(:number_of_likes).reverse
   end
 
   def new
@@ -11,6 +11,7 @@ class StatusUpdatesController < ApplicationController
 
   def create
     @status_update = StatusUpdate.new(status_update_params)
+    @status_update.number_of_likes = 0
     if @status_update.save
       redirect_to @status_update, notice: 'Status update was successfully submitted.'
     else
@@ -35,6 +36,12 @@ class StatusUpdatesController < ApplicationController
   def destroy
     @status_update.destroy
       redirect_to root_path, notice: 'Status update was successfully deleted.'
+  end
+
+  def like
+    @status_update.number_of_likes = @status_update.number_of_likes + 1
+    @status_update.save
+    redirect_to root_path
   end
 
 private
