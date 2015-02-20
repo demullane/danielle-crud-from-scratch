@@ -29,3 +29,26 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<p></p>
+<p></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>User Name</th>
+      <th>Number of Likes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @status_updates.each do |status| %>
+      <tr>
+        <td><%= status.status %></td>
+        <td><%= status.user %></td>
+        <td><%= status.number_of_likes %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

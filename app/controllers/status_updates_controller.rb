@@ -7,6 +7,12 @@ class StatusUpdatesController < ApplicationController
   end
 
   def create
+    @status_update = StatusUpdate.new(status_update_params)
+    if @status_update.save
+      redirect_to @status_update, notice: 'Status update was successfully submitted.'
+    else
+      redirect_to :new
+    end
   end
 
   def show
@@ -16,6 +22,11 @@ class StatusUpdatesController < ApplicationController
   end
 
   def update
+    if @status_update.update(status_update_params)
+      redirect_to @status_update, notice: 'Status update was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy

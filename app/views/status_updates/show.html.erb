@@ -1,0 +1,16 @@
+<div>
+<h2><%= @status_update.status %></h2>
+</div>
+
+<dl>
+  <dt><strong>Status: </strong></dt>
+  <dd><%= @status_update.status %></dd>
+  <dt><strong>User Name: </strong></dt>
+  <dd><%= @status_update.user %></dd>
+  <dt><strong>Number of Likes: </strong></dt>
+  <dd><%= @status_update.number_of_likes %></dd>
+</dl>
+
+<div>
+  <%= link_to "Back", root_path %>
+</div>
