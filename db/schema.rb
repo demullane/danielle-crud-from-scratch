@@ -11,9 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150220173711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "status_updates", force: :cascade do |t|
+    t.text    "status"
+    t.string  "user"
+    t.integer "number_of_likes"
+  end
 
 end

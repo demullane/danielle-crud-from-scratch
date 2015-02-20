@@ -1,28 +1,21 @@
-== README
+CRUD From Scratch
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Crud from scratch with validations
+How long will it take us to CRUD from scratch with validations?
 
-Things you may want to cover:
+Your mission:
 
-* Ruby version
+Crud "status updates" like in Facebook. Fields are status (text), user (string) and number of likes (integer).
+All three should be present with validations.
 
-* System dependencies
+There should be at least one capybara spec to cover it.
 
-* Configuration
+Create and update redirect to show. There should be flash messages.
 
-* Database creation
+Everyone should spend no more than a few minutes before asking, or looking it up, and should write down what they
+needed help with in detail (so everyone should have a list of things they missed) and will submit a write up.
 
-* Database initialization
+All class time of 3:30 is the time to beat (as a class)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Once you accept someone, they can opt to become acceptors and can put their names in a board.
+Submit and do the write up when you are done.
